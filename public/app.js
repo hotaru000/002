@@ -1,4 +1,4 @@
-const API_URL = "http://120.46.23.151:3000/students"; // 后端 API 地址
+const API_URL = "http://localhost:3000/students"; // 后端 API 地址
 
 // DOM 元素
 const studentForm = document.getElementById("studentForm");
@@ -72,6 +72,8 @@ searchButton.addEventListener("click", async () => {
 
 // 添加或更新学生信息
 studentForm.addEventListener("submit", async (event) => {
+  console.log("studentId before reset:", document.getElementById("studentId").value);
+
   event.preventDefault();
   const id = document.getElementById("studentId").value;
   const name = document.getElementById("name").value;
@@ -99,6 +101,7 @@ studentForm.addEventListener("submit", async (event) => {
     }
     fetchStudents();
     studentForm.reset();
+    document.getElementById("studentId").value = '';
     document.getElementById("saveButton").innerText = "添加";
   } catch (error) {
     console.error("保存学生信息失败:", error);
