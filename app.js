@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/students"; // 后端 API 地址
+const API_URL = "http://120.46.23.151:3000/students"; // 后端 API 地址
 
 // DOM 元素
 const studentForm = document.getElementById("studentForm");
